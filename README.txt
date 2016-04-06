@@ -13,11 +13,16 @@ This plugin creates a 'Portfolio' custom post type, and a Skills taxonomy
 == Description ==
 
 This plugin was created using the WordPress Boilerplate for plugins created by Devin Vinson 
-	"https://github.com/DevinVinson/WordPress-Plugin-Boilerplate"
+"https://github.com/DevinVinson/WordPress-Plugin-Boilerplate"
 and the excellent tutorial on custon post types from TeamTreeHouse.com
 
+The plugin started out with some functions in the functions.php of my WordPress theme, and I realised that it should not be tied in with the theme but should be developed as a separate plugin. So I decided to try and do it properly and incorporate the Plugin Boilerplate which has all the basic files and folders required for plugin publishing. 
+
+The Boilerplate was probably a bit more than I required for a simple plugin but I would like to integrate the i18n. 
+
 The plugin creates a 'Portfolio' custom post type, and a Skills taxonomy so that users can add skills (eg CSS, HTML, Hairstyling, Bricklaying or whatever they want).
-There are options for the user to input the 'year', and to set a featured image.
+
+There are also options for the user to input the 'year', and to set a featured image.
 
 == Installation ==
 
