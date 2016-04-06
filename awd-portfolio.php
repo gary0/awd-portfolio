@@ -53,7 +53,7 @@ register_deactivation_hook( __FILE__, 'deactivate_awd_portfolio' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-/*require plugin_dir_path( __FILE__ ) . 'includes/class-awd-portfolio.php';*/
+require plugin_dir_path( __FILE__ ) . 'includes/class-awd-portfolio.php';
 
 /**
  * Begins execution of the plugin.
@@ -66,7 +66,7 @@ register_deactivation_hook( __FILE__, 'deactivate_awd_portfolio' );
  */
 /*function run_plugin_name() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new AWD_Portfolio();
 	$plugin->run();
 
 }

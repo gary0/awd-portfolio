@@ -10,6 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin creates a 'Portfolio' custom post type, and a Skills taxonomy
 
+== Description ==
 
 This plugin was created using the WordPress Boilerplate for plugins created by Devin Vinson 
 	"https://github.com/DevinVinson/WordPress-Plugin-Boilerplate"
@@ -17,8 +18,6 @@ and the excellent tutorial on custon post types from TeamTreeHouse.com
 
 The plugin creates a 'Portfolio' custom post type, and a Skills taxonomy so that users can add skills (eg CSS, HTML, Hairstyling, Bricklaying or whatever they want).
 There are options for the user to input the 'year', and to set a featured image.
-
-
 
 == Installation ==
 
