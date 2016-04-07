@@ -14,25 +14,28 @@ This plugin creates a 'Portfolio' custom post type, and a Skills taxonomy
 
 This plugin was created using the WordPress Boilerplate for plugins created by Devin Vinson 
 "https://github.com/DevinVinson/WordPress-Plugin-Boilerplate"
-and the excellent tutorial on custon post types from TeamTreeHouse.com
+and an excellent tutorial on custon post types from TeamTreeHouse.com
 
-The plugin started out with some functions in the functions.php of my WordPress theme, and I realised that it should not be tied in with the theme but should be developed as a separate plugin. So I decided to try and do it properly and incorporate the Plugin Boilerplate which has all the basic files and folders required for plugin publishing. 
+The plugin started out with some functions in the functions.php of my WordPress theme, and I realised that it should not be tied in with the theme but should be developed as a separate plugin. So I decided to try and do it properly and incorporate the Plugin Boilerplate which has all the basic files and folders required for plugin publishing. The Boilerplate was probably a bit more than I required for a simple plugin but I would like to integrate the i18n. 
 
-The Boilerplate was probably a bit more than I required for a simple plugin but I would like to integrate the i18n. 
+Currently the plugin does not use the class in the inc folder but uses functions defined in the awd-portfolio.php page. The awd-portfolio.php page bypasses the class that is used for initialisation, and thus the i18n function.
 
 The plugin creates a 'Portfolio' custom post type, and a Skills taxonomy so that users can add skills (eg CSS, HTML, Hairstyling, Bricklaying or whatever they want).
 
 There are also options for the user to input the 'year', and to set a featured image.
 
+There is an option to use the shortcode to produce a list of Portfolio Items.
+Paste [list-posts-portfolio] into any page or post to display the list, or optionally you can create a Portfolio page and the plugin will automatically use the 'archive.php' page to display a list of Porfolio custom post types. 
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
 
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Upload `awd-portfolio` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Add some skills to the Skills taxonomy in the Portfolio section
+4. Create some new Portfolio Items
+5. Paste [list-posts-portfolio] into any page or post to display the list
 
 == Frequently Asked Questions ==
 
