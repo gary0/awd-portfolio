@@ -109,21 +109,6 @@ function awd_portfolio_register() {
 
 }
 
-/**** Refresh WordPress permalinks when a plugin registers a custom post type. 
-This gets rid of the nasty 404 errors*/
-function portfolio_install() { 
-    // Clear the permalinks after the post type has been registered
-    flush_rewrite_rules(); 
-}
-register_activation_hook( __FILE__, 'portfolio_install' );
-
-/**** deactivate the plugin: ****/
-function portfolio_deactivation() { 
-    // Our post type will be automatically removed, so no need to unregister it 
-    // Clear the permalinks to remove our post type's rules
-    flush_rewrite_rules(); 
-}
-register_deactivation_hook( __FILE__, 'portfolio_deactivation' );
 
 /* add custom data fields to the add/edit post page */
 add_action("admin_init", "admin_init");
@@ -203,4 +188,26 @@ function portfolio_custom_columns($column){
       echo get_the_term_list($post->ID, 'Skills', '', ', ','');
       break;
   }
+}
+
+// create shortcode to list all portfolio items
+add_shortcode( 'list-posts-portfolio', 'portfolio_post_listing_shortcode' );
+function portfolio_post_listing_shortcode( $atts ) {
+    ob_start();
+    $query = new WP_Query( array(
+        'post_type' => 'portfolio',
+        'posts_per_page' => -1,
+        'order' => 'ASC',
+        'orderby' => 'title',
+    ) );
+    if ( $query->have_posts() ) { ?>
+            
+        <?php while ( $query->have_posts() ) : $query->the_post(); 
+          get_template_part( 'page-templates/portfolio', get_post_format() );
+        endwhile;
+        wp_reset_postdata(); ?>
+        
+    <?php $myvariable = ob_get_clean();
+    return $myvariable;
+    }
 }
